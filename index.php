@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sortable Table without DB</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script data-src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script data-src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -143,6 +143,35 @@
   </div>
 </div>
 <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        let lazyloadImages = document.querySelectorAll("img.lazy-load");
+        let lazyloadThrottleTimeout;
+
+        function lazyload() {
+          if(lazyloadThrottleTimeout) {
+            clearTimeout(lazyloadThrottleTimeout);
+          }
+          lazyloadThrottleTimeout = setTimeout(function() {
+            let scrollTop = window.pageYOffset;
+            lazyloadImages.forEach(function(img) {
+              if(img.offsetTop < (window.innerHeight + scrollTop)) {
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+              }
+            });
+            if(lazyloadImages.length == 0) {
+              document.removeEventListener("scroll", lazyload);
+              window.removeEventListener("resize", lazyload);
+              window.removeEventListener("orientationChange", lazyload);
+            }
+          }, 20);
+        }
+        document.addEventListener("scroll", lazyload);
+        window.addEventListener("resize", lazyload);
+        window.addEventListener("orientationChange", lazyload);
+      });
+    </script>
+<script>
     function sortTable(columnIndex) {
     data.sort((a, b) => {
       const keyA = Object.values(a)[columnIndex];
@@ -173,7 +202,7 @@
       const row = $('<tr>').html(`
         <td>${item.id}</td>
         <td>${item.name}</td>
-        <td><img src="${item.image}" alt="Image Preview" class="img-fluid"></td>
+        <td><img data-src="${item.image}" alt="Image Preview" class="lazy-load lazy-load img-fluid"></td>
         <td>${item.address}</td>
         <td>${item.gender}</td>
         <td>
@@ -228,7 +257,7 @@
       const viewContent = `
         <p><strong>ID:</strong> ${data[index].id}</p>
         <p><strong>Name:</strong> ${data[index].name}</p>
-        <p><strong>Image:</strong> <img src="${data[index].image}" alt="Image" class="img-fluid"></p>
+        <p><strong>Image:</strong> <img data-src="${data[index].image}" alt="Image" class="lazy-load img-fluid"></p>
         <p><strong>Address:</strong> ${data[index].address}</p>
         <p><strong>Gender:</strong> ${data[index].gender}</p>
       `;
