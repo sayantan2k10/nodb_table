@@ -143,16 +143,16 @@
   </div>
 </div>
 <script>
-    var data = [
+    const data = [
     { id: 1, name: 'Tester', image: 'Test.jpg', address: 'Test Address', gender: 'Male' },
     // Add more data as needed
   ];
 
   displayData(data);
   function displayData(dataArray) {
-    var tableBody = $('#tableBody');
+    const tableBody = $('#tableBody');
     dataArray.forEach(item => {
-      var row = $('<tr>').html(`
+      const row = $('<tr>').html(`
         <td>${item.id}</td>
         <td>${item.name}</td>
         <td><img src="${item.image}" alt="Image Preview" class="img-fluid"></td>
@@ -201,6 +201,48 @@
       displayData(data);
       $('#deleteEntryModal').modal('hide');
     }
+  }
+</script>
+<script>
+    function viewEntry(id) {
+    const index = data.findIndex(item => item.id === id);
+    if (index !== -1) {
+      const viewContent = `
+        <p><strong>ID:</strong> ${data[index].id}</p>
+        <p><strong>Name:</strong> ${data[index].name}</p>
+        <p><strong>Image:</strong> <img src="${data[index].image}" alt="Image" class="img-fluid"></p>
+        <p><strong>Address:</strong> ${data[index].address}</p>
+        <p><strong>Gender:</strong> ${data[index].gender}</p>
+      `;
+      $('#viewEntryBody').html(viewContent);
+    }
+  }
+
+  function addEntry() {
+    const name = $('#name').val();
+    const image = $('#image').val();
+    const address = $('#address').val();
+    const gender = $('#gender').val();
+
+    const newEntry = {
+      id: data.length + 1,
+      name: name,
+      image: image,
+      address: address,
+      gender: gender
+    };
+
+    data.push(newEntry);
+    displayData(data);
+
+    // Clear the form fields
+    $('#name').val('');
+    $('#image').val('');
+    $('#address').val('');
+    $('#gender').val('');
+
+    // Close the modal
+    $('#addEntryModal').modal('hide');
   }
 </script>
 </body>
