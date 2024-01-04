@@ -48,8 +48,8 @@
       var row = $('<tr>').html(`
         <td>${item.id}</td>
         <td>${item.name}</td>
-        <td><img data-src="${item.image}" alt="Image Preview" class="img-fluid lazyload"></td>
-        <td>${item.addre    ss}</td>
+        <td><img src="${item.image}" alt="Image Preview" class="img-fluid"></td>
+        <td>${item.address}</td>
         <td>${item.gender}</td>
         <td>
           <button class="btn btn-primary btn-sm" onclick="editEntry(${item.id})" data-toggle="modal" data-target="#editEntryModal">Edit</button>
