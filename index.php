@@ -161,7 +161,8 @@
 <script>
     const data = [
     { id: 1, name: 'Tester', image: 'Test.jpg', address: 'Test Address', gender: 'Male' },
-    // Add more data as needed
+    { id: 2, name: 'Bhanjo', image: 'Test.jpg', address: 'Kolkata', gender: 'Male' },    
+    { id: 3, name: 'Sammi', image: 'Test.jpg', address: 'Kolkata', gender: 'Female' },    
   ];
 
   displayData(data);
