@@ -243,18 +243,13 @@ html {
     function editEntry(id) {
     const index = data.findIndex(item => item.id === id);
     if (index !== -1) {
-      $('#editName').val(data[index].name);
+      const newName = prompt('Enter the new name:', data[index].name);
+      if (newName !== null) {
+        data[index].name = newName;
+        displayData(data);
+      }
     }
   }
-  function saveEditedEntry() {
-    const newName = $('#editName').val();
-    const id = data.findIndex(item => item.name === newName);
-    if (id !== -1) {
-      data[id].name = newName;
-      displayData(data);
-      $('#editEntryModal').modal('hide');
-    }
-  } 
 </script>
 <script>
     function deleteEntry(id) {
