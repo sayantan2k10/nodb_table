@@ -57,6 +57,7 @@
           <button class="btn btn-info btn-sm" onclick="viewEntry(${item.id})" data-toggle="modal" data-target="#viewEntryModal">View</button>
         </td>
       `);
+      tableBody.append(row);
     });
   }
 </script>
