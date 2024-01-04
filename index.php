@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sortable Table without DB</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script data-src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script data-src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 
@@ -202,7 +202,7 @@
       const row = $('<tr>').html(`
         <td>${item.id}</td>
         <td>${item.name}</td>
-        <td><img data-src="${item.image}" alt="Image Preview" class="lazy-load lazy-load img-fluid"></td>
+        <td><img data-src="${item.image}" alt="Image Preview" class="img-fluid"></td>
         <td>${item.address}</td>
         <td>${item.gender}</td>
         <td>
@@ -257,7 +257,7 @@
       const viewContent = `
         <p><strong>ID:</strong> ${data[index].id}</p>
         <p><strong>Name:</strong> ${data[index].name}</p>
-        <p><strong>Image:</strong> <img data-src="${data[index].image}" alt="Image" class="lazy-load img-fluid"></p>
+        <p><strong>Image:</strong> <img data-src="${data[index].image}" alt="Image" class="img-fluid"></p>
         <p><strong>Address:</strong> ${data[index].address}</p>
         <p><strong>Gender:</strong> ${data[index].gender}</p>
       `;
