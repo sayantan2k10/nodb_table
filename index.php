@@ -143,6 +143,22 @@
   </div>
 </div>
 <script>
+    function sortTable(columnIndex) {
+    data.sort((a, b) => {
+      const keyA = Object.values(a)[columnIndex];
+      const keyB = Object.values(b)[columnIndex];
+
+      if (typeof keyA === 'string' && typeof keyB === 'string') {
+        return keyA.localeCompare(keyB);
+      } else {
+        return keyA - keyB;
+      }
+    });
+
+    displayData(data);
+  }
+</script>
+<script>
     const data = [
     { id: 1, name: 'Tester', image: 'Test.jpg', address: 'Test Address', gender: 'Male' },
     // Add more data as needed
