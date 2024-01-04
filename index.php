@@ -35,6 +35,46 @@
     </div>
   </div>
 </div>
+<!-- Modal for Add Entry Form -->
+<div class="modal" id="addEntryModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">+ Entry</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <form id="addEntryForm">
+            <div class="form-group">
+              <label for="name">Name:</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="form-group">
+              <label for="image">Image URL:</label>
+              <input type="text" class="form-control" id="image" required>
+            </div>
+            <div class="form-group">
+              <label for="address">Address:</label>
+              <input type="text" class="form-control" id="address" required>
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender:</label>
+              <select class="form-control" id="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="addEntry()">Add Entry</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
 <script>
     var data = [
     { id: 1, name: 'Tester', image: 'Test.jpg', address: 'Test Address', gender: 'Male' },
