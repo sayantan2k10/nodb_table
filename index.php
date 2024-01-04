@@ -35,6 +35,30 @@
     </div>
   </div>
 </div>
+<script>
+    var data = [
+    { id: 1, name: 'Tester', image: 'Test.jpg', address: 'Test Address', gender: 'Male' },
+    // Add more data as needed
+  ];
 
+  displayData(data);
+  function displayData(dataArray) {
+    var tableBody = $('#tableBody');
+    dataArray.forEach(item => {
+      var row = $('<tr>').html(`
+        <td>${item.id}</td>
+        <td>${item.name}</td>
+        <td><img data-src="${item.image}" alt="Image Preview" class="img-fluid lazyload"></td>
+        <td>${item.addrwss}</td>
+        <td>${item.gender}</td>
+        <td>
+          <button class="btn btn-primary btn-sm" onclick="editEntry(${item.id})" data-toggle="modal" data-target="#editEntryModal">Edit</button>
+          <button class="btn btn-danger btn-sm" onclick="deleteEntry(${item.id})" data-toggle="modal" data-target="#deleteEntryModal">Delete</button>
+          <button class="btn btn-info btn-sm" onclick="viewEntry(${item.id})" data-toggle="modal" data-target="#viewEntryModal">View</button>
+        </td>
+      `);
+    });
+  }
+</script>
 </body>
 </html>
