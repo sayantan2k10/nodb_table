@@ -202,7 +202,7 @@
       const row = $('<tr>').html(`
         <td>${item.id}</td>
         <td>${item.name}</td>
-        <td><img data-src="${item.image}" alt="Image Preview" class="img-fluid"></td>
+        <td><img data-src="${item.image}" alt="Image Preview" class="lazy-load img-fluid"></td>
         <td>${item.address}</td>
         <td>${item.gender}</td>
         <td>
@@ -257,7 +257,7 @@
       const viewContent = `
         <p><strong>ID:</strong> ${data[index].id}</p>
         <p><strong>Name:</strong> ${data[index].name}</p>
-        <p><strong>Image:</strong> <img data-src="${data[index].image}" alt="Image" class="img-fluid"></p>
+        <p><strong>Image:</strong> <img data-src="${data[index].image}" alt="Image" class="lazy-load img-fluid"></p>
         <p><strong>Address:</strong> ${data[index].address}</p>
         <p><strong>Gender:</strong> ${data[index].gender}</p>
       `;
