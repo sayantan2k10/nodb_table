@@ -15,7 +15,22 @@
     <div class="card-body">
       <h5 class="card-title">Table without DB</h5>
       <p class="card-text">
-        
+      <button class="btn btn-primary mb-2" data-toggle="modal" data-target="#addEntryModal">Add Entry</button>
+        <table class="table table-bordered">
+        <thead>
+            <tr>
+            <th onclick="sortTable(0)">ID</th>
+            <th onclick="sortTable(1)">Name</th>
+            <th>Image</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Table data will be inserted here -->
+        </tbody>
+        </table>
       </p>
     </div>
   </div>
