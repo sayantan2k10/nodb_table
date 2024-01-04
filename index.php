@@ -11,7 +11,14 @@
 <body>
 
 <div id="app" class="container mt-4">
-  
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Table without DB</h5>
+      <p class="card-text">
+        
+      </p>
+    </div>
+  </div>
 </div>
 
 </body>
