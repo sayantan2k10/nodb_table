@@ -31,7 +31,7 @@ html {
 }
 </style>
 </head>
-<body>
+<body onload="window.scrollTo(0,document.body.scrollHeight);">
 
 <div id="app" class="container mt-4">
 <div class="card">
