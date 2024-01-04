@@ -75,6 +75,73 @@
       </div>
     </div>
   </div>
+
+<!-- Modal for Edit Entry -->
+<div class="modal" id="editEntryModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Entry</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <form id="editEntryForm">
+            <div class="form-group">
+              <label for="editName">New Name:</label>
+              <input type="text" class="form-control" id="editName" required>
+            </div>
+            <button type="button" class="btn btn-primary" onclick="saveEditedEntry()">Save Changes</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for Delete Entry -->
+  <div class="modal" id="deleteEntryModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Delete Entry</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body">
+          <p>Are you sure you want to delete this entry?</p>
+          <button type="button" class="btn btn-danger" onclick="confirmDeleteEntry()">Delete</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for View Entry -->
+  <div class="modal" id="viewEntryModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">View Entry</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal Body -->
+        <div class="modal-body" id="viewEntryBody">
+          <!-- View Entry content will be inserted here using JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
     var data = [
     { id: 1, name: 'Tester', image: 'Test.jpg', address: 'Test Address', gender: 'Male' },
