@@ -99,32 +99,6 @@ html {
     </div>
   </div>
 
-<!-- Modal for Edit Entry -->
-<div class="modal" id="editEntryModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">Edit Entry</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-
-        <!-- Modal Body -->
-        <div class="modal-body">
-          <form id="editEntryForm">
-            <div class="form-group">
-              <label for="editName">New Name:</label>
-              <input type="text" class="form-control" id="editName" required>
-            </div>
-            <button type="button" class="btn btn-primary" onclick="saveEditedEntry()">Save Changes</button>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
   <!-- Modal for Delete Entry -->
   <div class="modal" id="deleteEntryModal">
     <div class="modal-dialog">
@@ -189,9 +163,6 @@ html {
             }
           }, 20);
         }
-        // document.addEventListener("scroll", lazyload);
-        // window.addEventListener("resize", lazyload);
-        // window.addEventListener("orientationChange", lazyload);
       });
     </script>
 <script>
@@ -229,7 +200,7 @@ html {
         <td>${item.address}</td>
         <td>${item.gender}</td>
         <td>
-          <button class="btn btn-primary btn-sm" onclick="editEntry(${item.id})" data-toggle="modal" data-target="#editEntryModal">Edit</button>
+          <button class="btn btn-primary btn-sm" onclick="editEntry(${item.id})">Edit</button>
           <button class="btn btn-danger btn-sm" onclick="deleteEntry(${item.id})" data-toggle="modal" data-target="#deleteEntryModal">Delete</button>
           <button class="btn btn-info btn-sm" onclick="viewEntry(${item.id})" data-toggle="modal" data-target="#viewEntryModal">View</button>
         </td>
