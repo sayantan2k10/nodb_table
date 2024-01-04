@@ -166,9 +166,9 @@
             }
           }, 20);
         }
-        document.addEventListener("scroll", lazyload);
-        window.addEventListener("resize", lazyload);
-        window.addEventListener("orientationChange", lazyload);
+        // document.addEventListener("scroll", lazyload);
+        // window.addEventListener("resize", lazyload);
+        // window.addEventListener("orientationChange", lazyload);
       });
     </script>
 <script>
@@ -202,7 +202,7 @@
       const row = $('<tr>').html(`
         <td>${item.id}</td>
         <td>${item.name}</td>
-        <td><img data-src="${item.image}" alt="Image Preview" class="lazy-load img-fluid"></td>
+        <td><img src="${item.image}" alt="Image Preview" class="lazy-load img-fluid"></td>
         <td>${item.address}</td>
         <td>${item.gender}</td>
         <td>
