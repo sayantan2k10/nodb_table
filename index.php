@@ -151,6 +151,7 @@
   displayData(data);
   function displayData(dataArray) {
     const tableBody = $('#tableBody');
+    tableBody.empty();
     dataArray.forEach(item => {
       const row = $('<tr>').html(`
         <td>${item.id}</td>
