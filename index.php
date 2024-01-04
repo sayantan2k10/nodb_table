@@ -186,5 +186,22 @@
     }
   } 
 </script>
+<script>
+    function deleteEntry(id) {
+    // Set the id to be deleted
+    $('#deleteEntryModal').data('entryId', id);
+  }
+
+  function confirmDeleteEntry() {
+    const id = $('#deleteEntryModal').data('entryId');
+    const index = data.findIndex(item => item.id === id);
+
+    if (index !== -1) {
+      data.splice(index, 1);
+      displayData(data);
+      $('#deleteEntryModal').modal('hide');
+    }
+  }
+</script>
 </body>
 </html>
