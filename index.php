@@ -87,7 +87,7 @@ html {
             <div class="form-group">
               <label for="gender">Gender:</label>
               <select class="form-control" id="gender" required>
-                <option value="Male">Male</option>
+                <option value="Male" selected>Male</option>
                 <option value="Female">Female</option>
               </select>
             </div>
@@ -196,7 +196,7 @@ html {
       const row = $('<tr>').html(`
         <td>${item.id}</td>
         <td>${item.name}</td>
-        <td><img src="${item.image}" alt="Image Preview" class="lazy-load img-fluid"></td>
+        <td><img src="${item.image}" alt="Image Preview" class="lazy-load img-fluid" width="200px"></td>
         <td>${item.address}</td>
         <td>${item.gender}</td>
         <td>
@@ -246,7 +246,7 @@ html {
       const viewContent = `
         <p><strong>ID:</strong> ${data[index].id}</p>
         <p><strong>Name:</strong> ${data[index].name}</p>
-        <p><strong>Image:</strong> <img src="${data[index].image}" alt="Image" class="lazy-load img-fluid"></p>
+        <p><strong>Image:</strong> <img src="${data[index].image}" alt="Image" class="lazy-load img-fluid" width="200px"></p>
         <p><strong>Address:</strong> ${data[index].address}</p>
         <p><strong>Gender:</strong> ${data[index].gender}</p>
       `;
