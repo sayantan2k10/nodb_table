@@ -225,7 +225,6 @@
   function saveEditedEntry() {
     const newName = $('#editName').val();
     const id = data.findIndex(item => item.name === newName);
-
     if (id !== -1) {
       data[id].name = newName;
       displayData(data);
@@ -257,7 +256,7 @@
       const viewContent = `
         <p><strong>ID:</strong> ${data[index].id}</p>
         <p><strong>Name:</strong> ${data[index].name}</p>
-        <p><strong>Image:</strong> <img data-src="${data[index].image}" alt="Image" class="lazy-load img-fluid"></p>
+        <p><strong>Image:</strong> <img src="${data[index].image}" alt="Image" class="lazy-load img-fluid"></p>
         <p><strong>Address:</strong> ${data[index].address}</p>
         <p><strong>Gender:</strong> ${data[index].gender}</p>
       `;
